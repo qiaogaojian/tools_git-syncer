@@ -1,0 +1,8 @@
+command:
+  - 'pouchdb-server --port 3996 --dir D:\Tools\Chrome\pouchdb-server\db --config D:\Tools\Chrome\pouchdb-server\config.json --sqlite'
+
+path:
+  - 'D:\Tools\Python'
+  - 'D:\Gitee\bookxnote\NoteData'
+
+interval: 1800
