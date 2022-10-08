@@ -46,9 +46,19 @@ def get_full_relative_path(relative_path):
     return full_relative_path
 
 
-def load_config(path):
+def get_cur_file_name():
+    """ 获取当前文件名字, 不带后缀 """
+    cur_file_name = os.path.basename(os.path.realpath(sys.argv[0]))
+    if '.' in cur_file_name:
+        cur_file_name = cur_file_name.split('.')[0]
+    return cur_file_name
+
+
+def load_config():
     """ 加载自动运行配置 """
-    with open(get_full_relative_path(path), 'r', encoding='utf-8') as file:
+    file_name = get_cur_file_name()
+    config_path = f"{file_name}.yml"
+    with open(get_full_relative_path(config_path), 'r', encoding='utf-8') as file:
         config = file.read()
         return yaml.safe_load(config)
 
@@ -64,8 +74,7 @@ def run_command(command):
 
 
 if __name__ == "__main__":
-    config_path = "auto_runner.yml"
-    config = load_config(config_path)
+    config = load_config()
 
     command_config = config['command']
     path_config = config['path']
