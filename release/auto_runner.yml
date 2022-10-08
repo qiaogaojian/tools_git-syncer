@@ -1,10 +1,13 @@
 command:
-  - 'pouchdb-server --port 3996 --dir D:\Tools\Chrome\pouchdb-server\db --config D:\Tools\Chrome\pouchdb-server\config.json --sqlite'
-  - 'D:\Tools\Chrome\simpread-syncer\syncer.exe -c D:\Tools\Chrome\simpread-syncer\config.json'
+  - 'pouchdb-server --port 3996 --dir D:\Git\Config\config_highlighter\db --config D:\Git\Config\config_highlighter\config.json --sqlite'
+  - 'D:\Git\Tools\tools_simpread-syncer\syncer.exe -c D:\Git\Tools\tools_simpread-syncer\config.json'
 
 path:
-  - 'D:\Tools\Python'
-  - 'D:\Tools\Chrome'
-  - 'D:\Gitee\bookxnote\NoteData'
+  - 'D:\Git\Config\config_bookxnote'
+  - 'D:\Git\Config\config_highlighter'
+  - 'D:\Git\Config\config_rime'
+  - 'D:\Git\Config\config_vim'
+  - 'C:\Users\Administrator\.vscode'
+  - 'C:\Users\Administrator\AppData\Roaming\Code\User'
 
 interval: 18
