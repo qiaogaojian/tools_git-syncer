@@ -1,0 +1,10 @@
+command:
+  - 'pouchdb-server --port 3996 --dir D:\Tools\Chrome\pouchdb-server\db --config D:\Tools\Chrome\pouchdb-server\config.json --sqlite'
+  - 'D:\Tools\Chrome\simpread-syncer\syncer.exe -c D:\Tools\Chrome\simpread-syncer\config.json'
+
+path:
+  - 'D:\Tools\Python'
+  - 'D:\Tools\Chrome'
+  - 'D:\Gitee\bookxnote\NoteData'
+
+interval: 18
