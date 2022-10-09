@@ -18,7 +18,7 @@ def create_git_order(path):
     os.chdir(path)
 
     time_str = get_time()
-    order_arr = ["git pull", "git status", "git add .", "git commit -m " + '"' + path + ' ' + time_str + '"', "git push origin master"]  # 创建指令集合
+    order_arr = ["git pull", "git status", "git add .", "git commit -m " + '"' + path + ' ' + time_str + '"', "git push"]  # 创建指令集合
     for order in order_arr:
         # os.system(order)
         subprocess.call(order, creationflags=0x08000000)  # 隐藏执行每一项指令
