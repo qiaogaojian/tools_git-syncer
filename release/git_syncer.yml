@@ -6,7 +6,7 @@ command:
 path:
   - 'D:\Git\Config\config_bookxnote'
   - 'D:\Git\Config\config_highlighter'
-  
+  - 'D:\Git\Config\config_rime'
   - 'D:\Git\Config\config_vim'
   - 'C:\Users\Administrator\.vscode'
   - 'C:\Users\Administrator\AppData\Roaming\Code\User'
