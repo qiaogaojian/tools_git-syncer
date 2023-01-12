@@ -11,4 +11,4 @@ path:
   - 'C:\Users\Administrator\.vscode'
   - 'C:\Users\Administrator\AppData\Roaming\Code\User'
 
-interval: 60
+interval: 600
