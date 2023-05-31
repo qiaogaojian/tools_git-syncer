@@ -1,7 +1,6 @@
 command:
   - 'pouchdb-server --port 3996 --dir D:\Git\Config\config_highlighter\db --config D:\Git\Config\config_highlighter\config.json --sqlite'
   - 'D:\Git\Tools\tools_simpread-syncer\syncer.exe -c D:\Git\Tools\tools_simpread-syncer\config.json'
-  - 'C:\Program Files (x86)\Rime\weasel-0.14.3\WeaselServerAutostart.exe'
 
 path:
   - 'D:\Git\Config\config_bookxnote'
