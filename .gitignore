@@ -3,3 +3,4 @@ git_syncer.spec
 dist
 build
 venv/
+.idea
