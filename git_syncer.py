@@ -15,7 +15,7 @@ def get_time():
     return time.ctime()
 
 
-def create_git_order(path):
+def run_git_sync_cmd(path):
     """ 生成git指令并执行 """
     os.chdir(path)
 
@@ -34,9 +34,10 @@ def sync_git_repo(paths, interval):
     while True:
         for path in paths:
             try:
-                create_git_order(path)
+                run_git_sync_cmd(path)
             except Exception as e:
                 Logger.instance().info(f"sync_git_repo Exception:{e} trackback:{traceback.format_exc()}")
+            time.sleep(3)
 
         time.sleep(interval)
 
@@ -75,6 +76,24 @@ def run_command(command):
         Logger.instance().info(f"run_command Exception:{e} trackback:{traceback.format_exc()}")
 
 
+def run_init_command(arg_commands, config_commands):
+    # ********************************* 自动启动 *********************************
+    arg_commands.extend(config_commands)
+    for command in arg_commands:
+        Logger.instance().info(f"启动命令: \"{command}\"")
+        threading.Thread(target=run_command, args=(command,)).start()
+
+
+def sync_git_repo(arg_paths, config_paths):
+    # ********************************* 自动同步 *********************************
+    arg_paths.extend(config_paths)
+    for path in arg_paths:
+        Logger.instance().info(f"同步仓库目录: \"{path}\"")
+    Logger.instance().info(f"时间间隔:{interval}")
+
+    sync_git_repo(arg_paths, interval)
+
+
 if __name__ == "__main__":
     core = Core()
     core.init(env="dev")
@@ -93,20 +112,7 @@ if __name__ == "__main__":
     #  https://stackoverflow.com/questions/54022135/passing-an-array-into-python-argument-from-bash
     parser.add_argument('-c', nargs='+', help='需要自启动的命令行, 支持多个, 用空格隔开', default=[])
     parser.add_argument('-p', nargs='+', help='需要同步的git仓库路径, 支持多个, 用空格隔开', default=[])
-    options = parser.parse_args()
+    args = parser.parse_args()
 
-    # ********************************* 自动启动 *********************************
-    commands = options.c
-    commands.extend(command_config)
-    for command in commands:
-        Logger.instance().info(f"启动命令: \"{command}\"")
-        threading.Thread(target=run_command, args=(command,)).start()
-
-    # ********************************* 自动同步 *********************************
-    paths = options.p
-    paths.extend(path_config)
-    for path in paths:
-        Logger.instance().info(f"同步仓库目录: \"{path}\"")
-    Logger.instance().info(f"时间间隔:{interval}")
-
-    sync_git_repo(paths, interval)
+    run_init_command(args.c, command_config)
+    sync_git_repo(args.p, path_config)
