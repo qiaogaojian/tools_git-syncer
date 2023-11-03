@@ -6,6 +6,8 @@ import time
 import argparse
 import subprocess
 import threading
+from pycore.base import Core
+from pycore.logger import Logger
 
 
 def get_time():
@@ -34,7 +36,7 @@ def sync_git_repo(paths, interval):
             try:
                 create_git_order(path)
             except Exception as e:
-                print(f"sync_git_repo Exception:{e} trackback:{traceback.format_exc()}")
+                Logger.instance().info(f"sync_git_repo Exception:{e} trackback:{traceback.format_exc()}")
 
         time.sleep(interval)
 
@@ -70,10 +72,15 @@ def run_command(command):
         # os.system(command)
         subprocess.call(command, creationflags=0x08000000, shell=True)  # 隐藏执行每一项指令
     except Exception as e:
-        print(f"run_command Exception:{e} trackback:{traceback.format_exc()}")
+        Logger.instance().info(f"run_command Exception:{e} trackback:{traceback.format_exc()}")
 
 
 if __name__ == "__main__":
+    core = Core()
+    core.init(env="dev")
+
+    Core.instance().logger.info('********************************* Git Syncer *********************************')
+
     config = load_config()
 
     command_config = config['command']
@@ -92,14 +99,14 @@ if __name__ == "__main__":
     commands = options.c
     commands.extend(command_config)
     for command in commands:
-        print(f"启动命令: \"{command}\"")
+        Logger.instance().info(f"启动命令: \"{command}\"")
         threading.Thread(target=run_command, args=(command,)).start()
 
     # ********************************* 自动同步 *********************************
     paths = options.p
     paths.extend(path_config)
     for path in paths:
-        print(f"同步仓库目录: \"{path}\"")
-    print(f"时间间隔:{interval}")
+        Logger.instance().info(f"同步仓库目录: \"{path}\"")
+    Logger.instance().info(f"时间间隔:{interval}")
 
     sync_git_repo(paths, interval)
