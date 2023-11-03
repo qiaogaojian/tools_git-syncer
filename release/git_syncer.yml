@@ -6,8 +6,8 @@ command:
 path:  
   - 'D:\Git\Config\config_highlighter'  
   - 'D:\Git\Config\config_vim'
-  - 'C:\Users\Administrator\.vscode'
-  - 'C:\Users\Administrator\AppData\Roaming\Code\User'
+  - '%HOMEPATH%\.vscode'
+  - '%HOMEPATH%\AppData\Roaming\Code\User'
   - 'D:\Git\Config\config_ahk'
 
 interval: 1800

@@ -3,11 +3,11 @@ command:
   - 'D:\Git\Tools\tools_simpread-syncer\syncer.exe -c D:\Git\Tools\tools_simpread-syncer\config.json'
   - 'D:\Program\syncthing-windows-amd64-v1.23.5\syncthing.exe --no-console --no-browser'
 
-path:  
-  - 'D:\Git\Config\config_highlighter'  
+path:
+  - 'D:\Git\Config\config_highlighter'
   - 'D:\Git\Config\config_vim'
-  - 'C:\Users\Administrator\.vscode'
-  - 'C:\Users\Administrator\AppData\Roaming\Code\User'
+  - '%HOMEPATH%\.vscode'
+  - '%HOMEPATH%\AppData\Roaming\Code\User'
   - 'D:\Git\Config\config_ahk'
 
 interval: 1800
