@@ -4,10 +4,10 @@ command:
   - 'D:\Program\syncthing-windows-amd64-v1.23.5\syncthing.exe --no-console --no-browser'
 
 path:  
-  - 'D:\Git\Config\config_highlighter'  
-  - 'D:\Git\Config\config_vim'
   - '%HOMEPATH%\.vscode'
   - '%HOMEPATH%\AppData\Roaming\Code\User'
+  - 'D:\Git\Config\config_vim'
   - 'D:\Git\Config\config_ahk'
+  - 'D:\Git\Config\config_highlighter'
 
 interval: 1800
