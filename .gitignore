@@ -5,3 +5,5 @@ build
 venv/
 .idea
 log
+*.log
+*.spec
