@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "git-syncer"
-version = "0.1.2"
+version = "0.1.3"
 description = "Git 仓库同步 和 自动运行命令(可用于自启动和服务检测)"
 authors = ["qiaogaojian <qiaogaojian@vip.qq.com>"]
 readme = "README.md"

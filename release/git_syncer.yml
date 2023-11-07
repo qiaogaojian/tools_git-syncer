@@ -2,6 +2,7 @@ command:
   - 'pouchdb-server --port 3996 --dir D:\Git\Config\config_highlighter\db --config D:\Git\Config\config_highlighter\config.json --sqlite'
   - 'D:\Git\Tools\tools_simpread-syncer\syncer.exe -c D:\Git\Tools\tools_simpread-syncer\config.json'
   - 'D:\Program\syncthing-windows-amd64-v1.23.5\syncthing.exe --no-console --no-browser'
+  - 'D:\Git\Config\config_ahk\common.ahk'
 
 path:  
   - '%HOMEPATH%\.vscode'
