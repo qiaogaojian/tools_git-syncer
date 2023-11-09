@@ -10,5 +10,6 @@ path:
   - 'D:\Git\Config\config_vim'
   - 'D:\Git\Config\config_ahk'
   - 'D:\Git\Config\config_highlighter'
+  - 'D:\Git\Note\note_obsidian'
 
-interval: 1800
+interval: 3600
