@@ -3,6 +3,7 @@ command:
   - 'D:\Git\Tools\tools_simpread-syncer\syncer.exe -c D:\Git\Tools\tools_simpread-syncer\config.json'
   - 'D:\Program\syncthing-windows-amd64-v1.23.5\syncthing.exe --no-console --no-browser'
   - 'D:\Git\Config\config_ahk\common.ahk'
+  - 'wsl --exec dbus-launch true'
 
 path:  
   - '%HOMEPATH%\.vscode'
